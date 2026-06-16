@@ -1,5 +1,6 @@
 package de.rene.threebeans.service;
 
+import de.rene.threebeans.model.Bohne;
 import de.rene.threebeans.model.Tageseintrag;
 import de.rene.threebeans.repository.TageseintragRepository;
 import org.springframework.stereotype.Service;
@@ -20,10 +21,17 @@ public class TageseintragService {
     }
 
     public Tageseintrag saveTageseintrag(Tageseintrag tageseintrag) {
+        if (tageseintrag.getBohnen() != null) {
+            for (Bohne bohne : tageseintrag.getBohnen()) {
+                bohne.setTageseintrag(tageseintrag);
+            }
+        }
         return tageseintragRepository.save(tageseintrag);
     }
 
     public void deleteTageseintrag(Long id) {
         tageseintragRepository.deleteById(id);
     }
+
+
 }

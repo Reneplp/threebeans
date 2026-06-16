@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>threeBeans</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="setup-screen" class="screen">
+    <h1>threeBeans</h1>
+    <p>Wie heißt du?</p>
+    <input type="text" id="name-input" placeholder="Dein Name">
+    <p>Wie alt bist du?</p>
+    <input type="number" id="alter-input" placeholder="Alter">
+    <button onclick="nutzerAnlegen()">Weiter</button>
+</div>
+
+<div id="eintrag-screen" class="screen hidden">
+    <h1>threeBeans</h1>
+    <p id="begruessung">Hey, wie war dein Tag?</p>
+
+    <label for="datum-input">Datum:</label>
+    <input type="date" id="datum-input">
+
+    <div id="stimmung-auswahl">
+        <button onclick="stimmungWaehlen('HERVORRAGEND')" data-stimmung="HERVORRAGEND">😄</button>
+        <button onclick="stimmungWaehlen('GUT')" data-stimmung="GUT">🙂</button>
+        <button onclick="stimmungWaehlen('NAJA')" data-stimmung="NAJA">😐</button>
+        <button onclick="stimmungWaehlen('SCHLECHT')" data-stimmung="SCHLECHT">🙁</button>
+    </div>
+
+    <div id="bohnen-liste">
+        <div class="bohne-zeile">
+            <input type="text" class="bohne-input" placeholder="Was war heute toll?">
+            <button onclick="bohneEntfernen(this)">X</button>
+        </div>
+    </div>
+
+    <button onclick="bohneHinzufuegen()">+ Bohne hinzufügen</button>
+    <button onclick="eintragSpeichern()">Speichern</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

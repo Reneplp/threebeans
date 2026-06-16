@@ -10,12 +10,12 @@ public class Nutzer {
     private Long id;
 
     private String name;
-    private int alter;
+    private Integer alter;
 
     public Nutzer() {
     }
 
-    public Nutzer(String name, int alter) {
+    public Nutzer(String name, Integer alter) {
         this.name = name;
         this.alter = alter;
     }
@@ -32,11 +32,11 @@ public class Nutzer {
         this.name = name;
     }
 
-    public int getAlter() {
+    public Integer getAlter() {
         return alter;
     }
 
-    public void setAlter(int alter) {
+    public void setAlter(Integer alter) {
         this.alter = alter;
     }
 }
