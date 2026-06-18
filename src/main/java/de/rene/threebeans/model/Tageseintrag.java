@@ -14,14 +14,15 @@ public class Tageseintrag {
 
     private LocalDate datum;
 
-    @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.STRING)    // Sagt Hibernate, dass nicht der Index aus dem Enum (0,1,2,3) sondern der Wert als Text
+                                    // gespeichert werden soll
     private Stimmung stimmung;
 
-    @ManyToOne
+    @ManyToOne // ER-Tabelle Beziehung N:1
     @JoinColumn(name = "nutzer_id")
     private Nutzer nutzer;
 
-    @OneToMany(mappedBy = "tageseintrag", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "tageseintrag", cascade = CascadeType.ALL, orphanRemoval = true) // ER-Tabelle 1:N
     private List<Bohne> bohnen = new ArrayList<>();
 
     public Tageseintrag() {

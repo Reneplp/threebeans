@@ -7,13 +7,21 @@
 </head>
 <body>
 
-<div id="setup-screen" class="screen">
+<div id="auswahl-screen" class="screen">
+    <h1>threeBeans</h1>
+    <p>Wer bist du?</p>
+    <div id="nutzer-liste"></div>
+    <button onclick="zeigeSetup()">Neuen Nutzer anlegen</button>
+</div>
+
+<div id="setup-screen" class="screen hidden">
     <h1>threeBeans</h1>
     <p>Wie heißt du?</p>
     <input type="text" id="name-input" placeholder="Dein Name">
     <p>Wie alt bist du?</p>
     <input type="number" id="alter-input" placeholder="Alter">
     <button onclick="nutzerAnlegen()">Weiter</button>
+    <button onclick="zeigeAuswahl()">Zurück</button>
 </div>
 
 <div id="eintrag-screen" class="screen hidden">
@@ -39,6 +47,23 @@
 
     <button onclick="bohneHinzufuegen()">+ Bohne hinzufügen</button>
     <button onclick="eintragSpeichern()">Speichern</button>
+    <button onclick="zeigeHistorie()">Historie ansehen</button>
+    <button onclick="zeigeAuswahl()">Nutzer wechseln</button>
+</div>
+
+<div id="historie-screen" class="screen hidden">
+    <h1>threeBeans</h1>
+    <p id="historie-titel">Historie</p>
+
+    <label for="historie-datum">Tag ansehen:</label>
+    <input type="date" id="historie-datum" onchange="zeigeTag()">
+
+    <div id="historie-tag-ansicht"></div>
+
+    <h3>Letzte Einträge</h3>
+    <div id="historie-liste"></div>
+
+    <button onclick="zeigeEintrag()">Zurück zum Eintragen</button>
 </div>
 
 <script src="script.js"></script>

@@ -1,6 +1,7 @@
 package de.rene.threebeans.model;
 
 import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Bohne {
@@ -12,7 +13,8 @@ public class Bohne {
     private String text;
 
     @ManyToOne
-    @JoinColumn(name = "tageseintrag_id")
+    @JoinColumn(name = "tageseintrag_id") // legt Spalte in der Bohne-Tabelle fest, die den FK speichert
+    @JsonIgnore // mit der Annotation sage ich, dass dieses Feld beim Umwandeln in Json ignoriert werden soll
     private Tageseintrag tageseintrag;
 
     public Bohne() {

@@ -43,3 +43,26 @@ button {
 .bohne-zeile input {
     flex: 1;
 }
+
+.historie-eintrag {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 8px 0;
+    text-align: left;
+}
+
+.historie-eintrag .datum-stimmung {
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.historie-eintrag ul {
+    margin: 4px 0 0 20px;
+}
+
+#nutzer-liste button {
+    display: block;
+    width: 100%;
+    margin: 6px 0;
+}
